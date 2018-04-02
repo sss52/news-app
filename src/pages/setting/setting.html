@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <!--<form [formGroup]="userForm" (ngSubmit)="onSubmit()">-->
+        <form>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+            <accordion>
+                <accordion-group>
+                    <accordion-heading>
+                        <input type="radio" name="news_type" value="top-headlines"> <accordion-toggle>Top Headlines</accordion-toggle>
+                    </accordion-heading>
+                    <accordion>
+                        <accordion-group heading="Select any Category">
+                            <ion-item *ngFor="let cat of categories">
+                                <label class = "item item-radio">
+                                    <input type="radio" value="{{cat.id}}" name="categories" />
+                                    <div class = "item-content">
+                                       {{cat.name}}
+                                    </div>
+                                    <i class = "radio-icon ion-checkmark"></i>
+                                </label>
+                            </ion-item>
+                        </accordion-group>
+                        <accordion-group heading="Select any Country">
+                            <ion-item *ngFor="let coun of countries">
+                                <label class = "item item-radio">
+                                    <input type="radio" value="{{coun.id}}" name="countries" />
+                                    <div class = "item-content">
+                                       {{coun.name}}
+                                    </div>
+                                    <i class = "radio-icon ion-checkmark"></i>
+                                </label>
+                            </ion-item>
+                        </accordion-group>
+                    </accordion>
+
+                </accordion-group>
+                <accordion-group>
+                    <accordion-heading>
+                        <input type="radio" name="news_type" value="everything"> <accordion-toggle>Everything</accordion-toggle>
+                    </accordion-heading>
+                    This is content of the contacts
+                </accordion-group>
+                <accordion-group>
+                    <accordion-heading>
+                        <input type="radio" name="news_type" value="sources"> <accordion-toggle>Sources</accordion-toggle>
+                    </accordion-heading>
+                    Content of the Map
+                </accordion-group>
+            </accordion>
+            <accordion>
+                <accordion-group heading="About me">
+                    Its all about me.
+                </accordion-group>
+                <accordion-group heading="Contacts">
+                    This is content of the contacts
+                </accordion-group>
+                <accordion-group heading="Map">
+                    Content of the Map
+                </accordion-group>
+                <accordion-group>
+                    <accordion-heading>
+                        <input type="checkbox"> <accordion-toggle>Custom clickable heading</accordion-toggle>
+                    </accordion-heading>
+                    Its all about me.
+                </accordion-group>
+            </accordion>
+        </form>
+        
+        
+        
+    </ion-list>
+</ion-content>
