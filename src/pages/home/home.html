@@ -25,12 +25,17 @@
     <a>View All</a>-->
 
     <ion-list>
-        <ion-item *ngFor="let data of everything">
+        <a (click)="goTo(data.url)">
+          <ion-item *ngFor="let data of everything">
+            <ion-thumbnail item-start>
             <img (click)="goTo(data.url)" height="100" width="100" [src]="data.urlToImage" />
-            <a (click)="goTo(data.url)">{{data.title}}</a>
+             </ion-thumbnail>
+            
+            <h2>{{data.title}}</h2>
             <p>{{data.description}}</p>
             <span>{{data.publishedAt | date:'yyyy-MM-dd HH:mm:ss'}}</span>
         </ion-item>
+      </a>
     </ion-list>
     
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
